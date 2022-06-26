@@ -11,13 +11,14 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-
+    {{ form.media }}
 
     {%for field in form%}
     <div class="form-group">
         <h4 class="control-label" for="{{ field.name }}">{{ field.label }} : </h4>
             <div class="col-sm-9">
             {{ field|add_class:'form-control' }}
+            
             </div>
         <br>
         {%endfor%}
