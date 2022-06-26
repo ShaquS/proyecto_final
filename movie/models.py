@@ -10,7 +10,7 @@ class Movie(models.Model):
         YEAR_CHOICES.append((r,r))
     
     name = models.CharField(max_length=40, default="", verbose_name="Nombre")
-    cover = models.ImageField(upload_to='staticfiles/covers',  null=True, blank=True, default = "", verbose_name="Poster")
+    cover = models.ImageField(upload_to='staticfiles/covers/',  null=True, blank=True, verbose_name="Poster")
     director = models.CharField(max_length=40, default="", verbose_name="Director")
     year = models.IntegerField(('Año'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
     plot = RichTextField(blank = True, null=True, verbose_name="Trama")
