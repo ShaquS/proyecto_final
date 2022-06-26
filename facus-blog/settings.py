@@ -45,11 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'course',
     'home',
-    'planilla',
-    'profesor',
-    'student',
     'user',
 ]
 
