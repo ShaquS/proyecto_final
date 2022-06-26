@@ -1,0 +1,17 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+
+<h2>Cargar imagen de Avatar</h2>
+<hr></hr>
+<h3>Usuario: {{user.first_name}}</h3>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Cargar Imagen</button>
+
+    <a class="btn btn-primary" href="{% url 'home:main' %}">Volver</a>
+</form>
+
+{% endblock %}
