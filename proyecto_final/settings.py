@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'app_peliculas',
     'app_recetas',
     'app_viajes',
+    'app_home',
+    'app_user',
 ]
 
 MIDDLEWARE = [
