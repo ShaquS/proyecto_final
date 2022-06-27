@@ -1,0 +1,16 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+
+<h2>Eliminar Música</h2>
+<hr></hr>
+
+<p>Está seguro de eliminar el tema: {{ music.name }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn2 btn-warning" type="submit" value="Sí, eliminar">
+    <a class="btn2 btn-primary" href="{% url 'music:music-list' %}" >Cancelar</a>
+</form>
+
+{% endblock %}

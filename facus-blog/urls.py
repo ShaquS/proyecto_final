@@ -22,6 +22,8 @@ urlpatterns = [
     path('', include('home.urls')),
     path('user/', include('user.urls')),
     path('movie/', include('movie.urls')),
+    path('music/', include('music.urls')),
+    path('game/', include('game.urls')),
 ]
 
 if settings.DEBUG:

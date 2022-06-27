@@ -1,0 +1,20 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+
+<p></p>
+<p><h2>{{ game.name }}</h2></p>
+<hr></hr>
+<img height="250px" src="{{ game.cover.url }}">
+<p><h4>Desarrollador: {{ game.director }}</h4></p>
+<p><h4>Año: {{ game.year }}</h4></p>
+<h4>Trama:</h4>
+<p>{{ game.plot|safe }}</p>
+<p><h4>Autor: {{ game.author }}</h4></p>
+<p><h5>Posteado: {{ game.post_date | date:"d-m-Y h:m" }}</h5></p>
+<p></p>
+
+
+
+<p><a class="btn2 btn-primary" href="{% url 'game:game-list' %}">Regresar al listado</a></p>
+{% endblock %}

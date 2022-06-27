@@ -1,0 +1,20 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+
+<p></p>
+<p><h2>{{ music.name }}</h2></p>
+<hr></hr>
+<img height="250px" src="{{ music.cover.url }}">
+<p><h4>Cantante: {{ music.singer }}</h4></p>
+<p><h4>Año: {{ music.year }}</h4></p>
+<h4>Descripción:</h4>
+<p>{{ music.plot|safe }}</p>
+<p><h4>Autor: {{ music.author }}</h4></p>
+<p><h5>Posteado: {{ music.post_date | date:"d-m-Y h:m" }}</h5></p>
+<p></p>
+
+
+
+<p><a class="btn2 btn-primary" href="{% url 'music:music-list' %}">Regresar al listado</a></p>
+{% endblock %}

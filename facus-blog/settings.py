@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'ckeditor',
     'home',
+    'music',
+    'game',
     'user',
     'movie',
 ]

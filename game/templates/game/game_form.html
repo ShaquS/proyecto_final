@@ -1,0 +1,35 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+{% load widget_tweaks %}
+
+
+<h2>Formulario para guardar/editar Juegos:</h2>
+<hr></hr>
+<br>
+        
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+
+    {%for field in form%}
+    <div class="form-group">
+        <h4 class="control-label" for="{{ field.name }}">{{ field.label }} : </h4>
+            <div class="col-sm-9">
+            {{ field|add_class:'form-control' }}
+            
+            </div>
+        <br>
+        {%endfor%}
+    </div>
+    <br>
+    
+
+    <input type="submit" class="btn btn-primary" value="Guardar" />
+    <a type="submit" class="btn btn-primary" href="{% url 'game:game-list' %}">Cancelar</a>
+    
+</form>
+
+{% endblock %}
+
