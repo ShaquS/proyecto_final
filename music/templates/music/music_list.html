@@ -1,0 +1,42 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+<hr>
+<h2>Música</h2>
+{% if user.is_authenticated %}
+<br>
+<a class="btn2 btn-primary" href="{% url 'music:music-add' %}">Agregar Música</a>
+{% endif %}
+<br>
+<br>
+<ul>
+    {% for music in music_list %}
+    <h5>
+    <li>
+        
+        {{music}}
+        (
+        
+            <a href="{% url 'music:music-detail' music.id %}">
+                <i class="fa fa-eye" style="color: rgb(255, 255, 255);"> </i>
+            </a>
+        )
+        {%  if user.is_authenticated %}
+        |
+        <a href="{% url 'music:music-update' music.id %}">
+            <i class="fa fa-pencil" style="color: rgb(255, 255, 255);"> </i>
+        </a>
+        |
+        <a href="{% url 'music:music-delete' music.id %}">
+            <i class="fa fa-trash" style="color: rgb(255, 255, 255);"> </i>
+        </a>
+        
+        {% endif %}
+        
+    </li>
+    </h5>
+    <p></p>
+    {% endfor %}
+</ul>
+
+{% endblock %}

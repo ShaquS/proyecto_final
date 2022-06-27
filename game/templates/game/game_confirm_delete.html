@@ -1,0 +1,16 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block facus-blog_content %}
+
+<h2>Eliminar Juego</h2>
+<hr></hr>
+
+<p>Está seguro de eliminar el juego: {{ game.name }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn2 btn-warning" type="submit" value="Sí, eliminar">
+    <a class="btn2 btn-primary" href="{% url 'game:game-list' %}" >Cancelar</a>
+</form>
+
+{% endblock %}
